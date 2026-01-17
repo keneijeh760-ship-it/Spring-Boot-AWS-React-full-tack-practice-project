@@ -1,0 +1,15 @@
+com\amigoscode\journey\CustomerIT$4.class
+com\amigoscode\journey\CustomerIT.class
+com\amigoscode\journey\AuthenticationIT$1.class
+com\amigoscode\customer\CustomerRepositoryTest.class
+com\amigoscode\customer\CustomerJDBCDataAccessServiceTest.class
+com\amigoscode\customer\CustomerServiceTest.class
+com\amigoscode\journey\CustomerIT$1.class
+com\amigoscode\customer\CustomerRowMapperTest.class
+com\amigoscode\journey\AuthenticationIT.class
+com\amigoscode\TestConfig.class
+com\amigoscode\journey\CustomerIT$2.class
+com\amigoscode\AbstractTestcontainers.class
+com\amigoscode\TestcontainersTest.class
+com\amigoscode\customer\CustomerJPADataAccessServiceTest.class
+com\amigoscode\journey\CustomerIT$3.class
