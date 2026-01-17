@@ -93,12 +93,14 @@ public class Customer implements UserDetails {
         this.gender = gender;
     }
 
-    public Customer(String name,
+    public Customer(Integer id,
+                    String name,
                     String email,
                     String password,
                     Integer age,
                     Gender gender,
                     String profileImageId) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;

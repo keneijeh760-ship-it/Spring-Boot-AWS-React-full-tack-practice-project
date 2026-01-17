@@ -123,17 +123,18 @@ public class CustomerService {
 
     public void uploadCustomerImage(Integer customerId, MultipartFile file) {
         checkIfcustomerExistsorThrow(customerId);
+        String profileImageId = UUID.randomUUID().toString();
         try {
-            String profileImageId = UUID.randomUUID().toString();
             s3Service.putObject(
                     buckets.getCustomer(),
-                    "profile-mages/%s/%s".formatted(customerId, profileImageId ),
+                    "profile-mages/%s/%s".formatted(customerId, profileImageId),
                     file.getBytes()
 
             );
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        customerDao.updateCustomerProfileImageId(profileImageId, customerId);
 
     }
 
@@ -144,11 +145,15 @@ public class CustomerService {
                         "customer with id [%s] not found".formatted(customerId)
                 ));
 
-        var profileImageId = UUID.randomUUID().toString();
+        if (customer.ProfileImageId().isBlank()) {
+            throw new ResourceNotFoundException("customer with id [%s] profile image not found".formatted(customerId))
+        }
+
+
 
         byte[] profileImage = s3Service.getObject(
                 buckets.getCustomer(),
-                "profile-mages/%s/%s".formatted(customerId, profileImageId )
+                "profile-mages/%s/%s".formatted(customerId, customer.ProfileImageId() )
 
 
         );
