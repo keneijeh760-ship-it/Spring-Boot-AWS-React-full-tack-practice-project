@@ -146,7 +146,7 @@ public class CustomerService {
                 ));
 
         if (customer.ProfileImageId().isBlank()) {
-            throw new ResourceNotFoundException("customer with id [%s] profile image not found".formatted(customerId))
+            throw new ResourceNotFoundException("customer with id [%s] profile image not found".formatted(customerId));
         }
 
 
